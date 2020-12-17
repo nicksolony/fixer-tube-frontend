@@ -5,7 +5,7 @@ const DELETE_VIDEO = 'DELETE_VIDEO';
 
 export const loadData = () => {
     return (dispatch) => {
-        fetch('http://localhost:3001/main_categories')
+        fetch('https://fixer-tube-api.herokuapp.com/main_categories')
         .then(resp => resp.json())
         .then(data => dispatch({type: LOAD_DATA, payload: data}))
     }
@@ -14,7 +14,7 @@ export const loadData = () => {
 export const addVideo = (newVideo,history) => {
     
     return (dispatch) => {
-        fetch('http://localhost:3001/videos/',{
+        fetch('https://fixer-tube-api.herokuapp.com/videos/',{
             method: 'post',
             headers: {
                 'Content-Type':'application/json',
@@ -33,7 +33,7 @@ export const addVideo = (newVideo,history) => {
 export const editVideo = (editedVideo,history) => {
     
     return (dispatch) => {
-        fetch(`http://localhost:3001/videos/${editedVideo.slug}`,{
+        fetch(`https://fixer-tube-api.herokuapp.com/videos/${editedVideo.slug}`,{
             method: 'put',
             headers: {
                 'Content-Type':'application/json',
@@ -53,7 +53,7 @@ export const editVideo = (editedVideo,history) => {
 export const deleteVideo = (video,history) => {
     
     return ((dispatch) => {
-        fetch(`http://localhost:3001/videos/${video.slug}`,{
+        fetch(`https://fixer-tube-api.herokuapp.com/videos/${video.slug}`,{
             method: 'delete',
             headers: {
                 'Content-Type':'application/json',
