@@ -2,6 +2,7 @@
   "name": "fixer-tube-frontend",
   "version": "0.1.0",
   "engines": {
+    "npm": "10.x",
     "node": "20.x"
   },
   "private": true,
